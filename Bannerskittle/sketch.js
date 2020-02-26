@@ -3,7 +3,7 @@
 let bigmanfont;
 
 function preload() {
-	bigmanfont = loadFont("../Bannerskittle/data/super-mario-64.otf");
+	bigmanfont = loadFont("../data/super-mario-64.otf");
 
 
 }
@@ -11,12 +11,34 @@ function preload() {
 
 
 function mainmenu() {
+
+
+
 	background(80, 0, 128);
+
+
+	for (menux = -19; menux < 1200; menux = menux + 50) {
+		for (let menuy = 0; menuy < 600; menuy = menuy + 145) {
+			noStroke();
+			fill(90, 10, 138);	
+			rect(menux,menuy,10,100);
+			rect(menux-10,menuy+100,10,10);
+			rect(menux-10,menuy-10,10,10);
+
+		}
+
+		
+
+
+
+	}
 
 	fill(80, 0, 128);
 	
 	strokeWeight(5);
 	stroke(255, 51, 255);
+
+	rect(300,150,600,350);
 
 	rect(500,200,200,50);
 	rect(500,300,200,50);
@@ -50,8 +72,6 @@ function mainmenu() {
 	text('Start',535,240);
 	text('Credits',510,340);
 	text('Quit',550,440);	
-	text(mouseY,20,20);
-
 
 }
 
