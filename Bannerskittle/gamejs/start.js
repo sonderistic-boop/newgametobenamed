@@ -25,13 +25,15 @@ function setup() {
 }
 
 function draw() {
-
 	mgr.draw();	
 }
 
 function mousePressed() {
-
 	mgr.handleEvent("mousePressed");
+}
+
+function mouseRelesed() {
+	mgr.handleEvent("mouseReleased");
 }
 
 

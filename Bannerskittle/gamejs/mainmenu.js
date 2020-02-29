@@ -1,5 +1,9 @@
+
+brackets = [];
+
 function mainmenu() {
-	brackets = [];
+	
+
 
 
 	this.setup = function() {
@@ -56,22 +60,43 @@ function mainmenu() {
 		rect(500,300,200,50);
 		rect(500,400,200,50);
 
+		//mouse highlights the ting
 
 		if (mouseX > 500 && mouseX < 700 && mouseY > 200 && mouseY < 250) {
-			stroke(255, 255, 255)
-			fill(218, 70, 125);
+			stroke(255, 255, 255)	
 			rect(500,200,200,50);}
 
 		if (mouseX > 500 && mouseX < 700 && mouseY > 300 && mouseY < 350) {
 			stroke(255, 255, 255)
-			fill(218, 70, 125);
 			rect(500,300,200,50);}
 
 		if (mouseX > 500 && mouseX < 700 && mouseY > 400 && mouseY < 450) {
 			stroke(255, 255, 255)
-			fill(218, 70, 125);
 			rect(500,400,200,50);}
 
+
+
+
+		//if mouse pressed
+
+		if (mouseIsPressed && mouseX > 500 && mouseX < 700 && mouseY > 200 && mouseY < 250) {
+			stroke(255, 255, 255)
+			fill(218, 70, 125);
+			rect(500,200,200,50);}
+
+		if (mouseIsPressed && mouseX > 500 && mouseX < 700 && mouseY > 300 && mouseY < 350) {
+			stroke(255, 255, 255)
+			fill(218, 70, 125);
+			rect(500,300,200,50);}
+
+		if (mouseIsPressed && mouseX > 500 && mouseX < 700 && mouseY > 400 && mouseY < 450) {
+			stroke(255, 255, 255)
+			fill(218, 70, 125);
+			rect(500,400,200,50);}
+				
+
+
+		
 
 		noStroke();
 		fill(255,255,255);
@@ -84,4 +109,43 @@ function mainmenu() {
 		text(mouseY,20,20);
 		text(mouseX,20,40);	
 	}
+
+
+
+
+	function mouseReleased() {
+
+		//mouse is released
+		if (mousemouseX > 500 && mouseX < 700 && mouseY > 200 && mouseY < 250) {
+			stroke(255, 255, 255)
+			fill(218, 70, 125);
+			rect(500,200,200,50);
+			//showscene levelselect
+		}
+
+		if (mouseX > 500 && mouseX < 700 && mouseY > 300 && mouseY < 350) {
+			stroke(255, 255, 255)
+			fill(218, 70, 125);
+			rect(500,300,200,50);
+			//showscene credits
+		}
+
+		if (mouseX > 500 && mouseX < 700 && mouseY > 400 && mouseY < 450) {
+			stroke(255, 255, 255)
+			fill(218, 70, 125);
+			rect(500,400,200,50);
+			//just QUIT
+		}
+
+}
+
+
+
+		
+	
+
+
+
+
 }	
+
