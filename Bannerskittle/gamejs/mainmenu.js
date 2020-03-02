@@ -19,8 +19,8 @@ function mainmenu() {
 				"bracketY" : menuy}
 
 			brackets.push(movingbrackets);
+			}
 		}
-	}
 	}	
 
 
@@ -113,10 +113,10 @@ function mainmenu() {
 
 
 
-	function mouseReleased() {
+	this.mouseReleased = function() {
 
 		//mouse is released
-		if (mousemouseX > 500 && mouseX < 700 && mouseY > 200 && mouseY < 250) {
+		if (mouseX > 500 && mouseX < 700 && mouseY > 200 && mouseY < 250) {
 			stroke(255, 255, 255)
 			fill(218, 70, 125);
 			rect(500,200,200,50);
@@ -127,7 +127,7 @@ function mainmenu() {
 			stroke(255, 255, 255)
 			fill(218, 70, 125);
 			rect(500,300,200,50);
-			//showscene credits
+			mgr.showScene( credits );
 		}
 
 		if (mouseX > 500 && mouseX < 700 && mouseY > 400 && mouseY < 450) {
@@ -136,16 +136,56 @@ function mainmenu() {
 			rect(500,400,200,50);
 			//just QUIT
 		}
+	}
+
 
 }
 
 
+function credits() {
+	this.draw = function() {
+		background(80, 0, 128);
 
+		for (var i = 0; i < brackets.length; i++) {
+			fill(90, 10, 138);
+			noStroke();
+			rect(brackets[i].bracketX,brackets[i].bracketY,10,100);
+			rect(brackets[i].bracketX-10,brackets[i].bracketY+100,10,10);
+			rect(brackets[i].bracketX-10,brackets[i].bracketY-10,10,10);
+			brackets[i].bracketX = brackets[i].bracketX - 1
+
+			if (brackets[i].bracketX < -20) {
+
+				brackets[i].bracketX = 1220
+			}
+		}
+
+		strokeWeight(5);
+		stroke(255, 51, 255);
 		
-	
+		fill(60,0,108);
+		rect(300,150,600,350);
+		rect(20,20,120,50);
+
+		fill(80, 0, 128);
+
+		noStroke();
+		textSize(32)
+		textFont(bigmanfont);
+		fill(255,255,255);
+
+		text("Game made by",428, 240);
+		text("Yusuf Tagari,",428,280);
+		text("Assets made by",408,360);
+		text("Yusuf Tagri.",428,400);
+		
 
 
 
+	}
 
-}	
+
+
+}
+
 

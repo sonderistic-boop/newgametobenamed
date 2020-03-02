@@ -2,7 +2,7 @@
 // <script src="lib/p5.play.js" type="text/javascript"></script>
 
 let bigmanfont;
-let mgr;
+var mgr;
 function preload() {
 	//global preload of all data
 	bigmanfont = loadFont("../assets/super-mario-64.otf");
@@ -16,10 +16,11 @@ function setup() {
 	mgr.wire();
 
 
-	mgr.addScene ( mainmenu );
-	mgr.addScene ( credits );
+	mgr.showScene ( mainmenu );
+	//mgr.addScene ( mainmenu11 );
 	//mgr.addScene ( mainmenu12 );
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+	
+
 	mgr.showScene( mainmenu );
 }
 
